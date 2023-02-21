@@ -1,36 +1,46 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <RootNamespace>IniParser</RootNamespace>
+    <AssemblyName>IniParser</AssemblyName>
+    <Description><![CDATA[New maintainer of "ini-parser".
 
-	<PropertyGroup>
-		<RootNamespace>IniParser</RootNamespace>
-		<AssemblyName>IniFileParser</AssemblyName>
-		<Description>A .NET, Mono and Unity3d compatible(*) library for reading/writing INI data from IO streams, file streams, and strings written in C#.
+A .NET, Mono and Unity3d compatible(*) library for reading/writing INI data from IO streams, file streams, and strings written in C#.
 
 Also implements merging operations, both for complete ini files, sections, or even just a subset of the keys contained by the files.
 
-(*) This library is 100% .NET code and does not have any dependencies on Windows API calls in order to be portable.</Description>
-		<Authors>Ricardo Amores Hernández</Authors>
-		<PackageProjectUrl>https://github.com/rickyah/ini-parser</PackageProjectUrl>
-		<PackageLicenseExpression>MIT</PackageLicenseExpression>
-		<PackageIconUrl>https://raw.githubusercontent.com/rickyah/ini-parser/development/nuget-ini-icon.png</PackageIconUrl>
-		<Version>2.5.3-sh1</Version>
-		<SignAssembly>True</SignAssembly>
-		<AssemblyOriginatorKeyFile>Properties\publickey.snk</AssemblyOriginatorKeyFile>
-		<OutputType>Library</OutputType>
-		<GenerateDocumentationFile>True</GenerateDocumentationFile>
-		<TreatWarningsAsErrors>True</TreatWarningsAsErrors>
-		<NoWarn>$(NoWarn);0618;1591;1573</NoWarn><!-- Ignore: Use of Deprecated, Undocumented Public Members, Undocumented Parameters -->
-		<PackageTags>ini</PackageTags>
-		<PackageId>ini-parser</PackageId>
-		<Product>INI Parser</Product>
-		<ReleaseVersion></ReleaseVersion>
-	</PropertyGroup>
+(*) This library is 100% .NET code and does not have any dependencies on Windows API calls in order to be portable.
+]]></Description>
+    <Authors>Ricardo Amores Hernández, SandRock</Authors>
+    <PackageProjectUrl>https://github.com/sandrock/ini-parser-dotnet</PackageProjectUrl>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageIcon>nuget-ini-icon.png</PackageIcon>
+    <Version>2.6.1</Version>
+    <SignAssembly>True</SignAssembly>
+    <AssemblyOriginatorKeyFile>Properties\publickey.snk</AssemblyOriginatorKeyFile>
+    <OutputType>Library</OutputType>
+    <GenerateDocumentationFile>True</GenerateDocumentationFile>
+    <TreatWarningsAsErrors>True</TreatWarningsAsErrors>
+    <NoWarn>$(NoWarn);0618;1591;1573</NoWarn><!-- Ignore: Use of Deprecated, Undocumented Public Members, Undocumented Parameters -->
+    <PackageTags>ini, parser, configuration, config, inifile, cfg, ini file</PackageTags>
+    <PackageId>ini-parser-new</PackageId>
+    <Product>INI Parser</Product>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageReleaseNotes>Support for net40 and netstandard2.0. Version 2.6.0 was bad, avoid it. </PackageReleaseNotes>
+    <Company>SandRock</Company>
+    <AssemblyVersion>2.6.1.0</AssemblyVersion>
+    <FileVersion>2.6.1.0</FileVersion>
+  </PropertyGroup>
 
-	<!-- Auto-select supported target frameworks based on MSBuild version -->
-	<PropertyGroup>
-		<TargetFrameworks>netstandard2.0</TargetFrameworks>
-	</PropertyGroup>
-    <!-- Only generate NuGet package for full builds -->
-    <PropertyGroup Condition="'$(MSBuildRuntimeType)'=='Full'">
-        <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-    </PropertyGroup>
+  <PropertyGroup>
+    <TargetFrameworks>net40;netstandard2.0</TargetFrameworks>
+    <Copyright>Ricardo Amores Hernández 2009-2019</Copyright>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(MSBuildRuntimeType)'=='Full'">
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include="..\..\nuget-ini-icon.png" Pack="true" PackagePath="">
+      <Link>nuget-ini-icon.png</Link>
+    </None>
+  </ItemGroup>
 </Project>
