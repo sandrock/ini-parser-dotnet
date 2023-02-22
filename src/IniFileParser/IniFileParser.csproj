@@ -35,6 +35,7 @@ Also implements merging operations, both for complete ini files, sections, or ev
     <PackageReleaseNotes>Support for net40 and netstandard2.0. Version 2.6.0 was bad, avoid it. </PackageReleaseNotes>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <GitThisAssemblyMetadata>true</GitThisAssemblyMetadata>
   </PropertyGroup>
   <ItemGroup>
     <None Include="..\..\nuget-ini-icon.png" Pack="true" PackagePath="">
@@ -43,5 +44,11 @@ Also implements merging operations, both for complete ini files, sections, or ev
     <None Include="..\..\README.md" Pack="true" PackagePath="">
       <Link>README.md</Link>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="GitInfo" Version="3.0.4">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
   </ItemGroup>
 </Project>
