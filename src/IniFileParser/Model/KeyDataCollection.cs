@@ -131,7 +131,7 @@ namespace IniParser.Model
             return false;
         }
 
-        [Obsolete("Pottentially buggy method! Use AddKey(KeyData keyData) instead (See comments in code for an explanation of the bug)")]
+        [Obsolete("Potentially buggy method! Use AddKey(KeyData keyData) instead (See comments in code for an explanation of the bug)")]
         public bool AddKey(string keyName, KeyData keyData)
         {
             // BUG: this actually can allow you to add the keyData having 
@@ -167,6 +167,7 @@ namespace IniParser.Model
 
             return false;
         }
+
         /// <summary>
         ///     Adds a new key with the specified name and value to the collection
         /// </summary>
@@ -180,7 +181,7 @@ namespace IniParser.Model
         ///     <c>true</c> if the key was added  <c>false</c> if a key with the same name already exist 
         ///     in the collection.
         /// </returns>
-        public bool AddKey(string keyName, string keyValue)
+        public bool Add(string keyName, string keyValue)
         {
             if (AddKey(keyName))
             {
@@ -190,6 +191,25 @@ namespace IniParser.Model
 
             return false;
 
+        }
+
+        /// <summary>
+        ///     Adds a new key with the specified name and value to the collection
+        /// </summary>
+        /// <param name="keyName">
+        ///     Name of the new key to be added.
+        /// </param>
+        /// <param name="keyValue">
+        ///     Value associated to the key.
+        /// </param>
+        /// <returns>
+        ///     <c>true</c> if the key was added  <c>false</c> if a key with the same name already exist 
+        ///     in the collection.
+        /// </returns>
+        [Obsolete("Method planned for removal. Use Add(string, string) instead. ")]
+        public bool AddKey(string keyName, string keyValue)
+        {
+            return this.Add(keyName, keyValue);
         }
 
         /// <summary>

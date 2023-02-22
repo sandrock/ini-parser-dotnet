@@ -93,7 +93,23 @@ namespace IniParser.Model
         /// <return><c>true</c> if the a new section with the specified name was added,
         /// <c>false</c> otherwise</return>
         /// <exception cref="ArgumentException">If the section name is not valid.</exception>
+        [Obsolete("Method planned for removal. Use Add(string) instead. ")]
         public bool AddSection(string keyName)
+        {
+            return this.Add(keyName);
+        }
+
+        /// <summary>
+        /// Creates a new section with empty data.
+        /// </summary>
+        /// <remarks>
+        /// <para>If a section with the same name exists, this operation has no effect.</para>
+        /// </remarks>
+        /// <param name="keyName">Name of the section to be created</param>
+        /// <return><c>true</c> if the a new section with the specified name was added,
+        /// <c>false</c> otherwise</return>
+        /// <exception cref="ArgumentException">If the section name is not valid.</exception>
+        public bool Add(string keyName)
         {
             //Checks valid section name
             //if ( !Assert.StringHasNoBlankSpaces(keyName) )
@@ -140,9 +156,23 @@ namespace IniParser.Model
         /// <c>true</c> if a section with the specified name exists in the
         ///  collection <c>false</c> otherwise
         /// </returns>
-        public bool ContainsSection(string keyName)
+        public bool Contains(string keyName)
         {
             return _sectionData.ContainsKey(keyName);
+        }
+
+        /// <summary>
+        /// Gets if a section with a specified name exists in the collection.
+        /// </summary>
+        /// <param name="keyName">Name of the section to search</param>
+        /// <returns>
+        /// <c>true</c> if a section with the specified name exists in the
+        ///  collection <c>false</c> otherwise
+        /// </returns>
+        [Obsolete("Method planned for removal. Use Contains(string) instead. ")]
+        public bool ContainsSection(string keyName)
+        {
+            return this.Contains(keyName);
         }
 
         /// <summary>
