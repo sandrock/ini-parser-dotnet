@@ -26,6 +26,12 @@ Actions:
 
 Documentation: [is in the upstream repo](https://github.com/rickyah/ini-parser/wiki)
 
+Branches:
+
+- `master`: one commit for each release version
+- `develop`: start and merge fixes and features here
+- `dev/vX.Y.Z`: to prepare a new release
+
 
 Changelog
 --------------------------
@@ -37,7 +43,12 @@ See [WIP issues](https://github.com/sandrock/ini-parser-dotnet/labels/WIP)
 
 ### v2.6
 
-Support for `net40` and `netstandard2.0`.
+For those who were using [ini-parser 2.5.2](https://www.nuget.org/packages/ini-parser/2.5.2), this release adds support for `net40` and `netstandard2.0` with (almost) no API change.
+
+Breaking changes:
+
+- you will need to add: `using IniParser;`
+- you will need to remove: `using IniParser.Model.Configuration;`
 
 
 ### Version 2
