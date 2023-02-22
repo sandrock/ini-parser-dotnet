@@ -18,19 +18,18 @@ namespace IniParser
         public IniDataParser Parser { get; protected set; }
 
         /// <summary>
-        ///     Ctor
+        ///     Represents an INI data parser for streams.
         /// </summary>
         public StreamIniDataParser() : this (new IniDataParser()) {}
 
         /// <summary>
-        ///     Ctor
+        ///     Represents an INI data parser for streams.
         /// </summary>
         /// <param name="parser"></param>
         public StreamIniDataParser(IniDataParser parser)
         {
             Parser = parser;
         }
-        #region Public Methods
 
         /// <summary>
         ///     Reads data in INI format from a stream.
@@ -89,7 +88,5 @@ namespace IniParser
 
             writer.Write(iniData.ToString(formatter));
         }
-
-        #endregion
     }
 }

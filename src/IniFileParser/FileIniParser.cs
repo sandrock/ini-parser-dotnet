@@ -13,12 +13,12 @@ namespace IniParser
     public class FileIniDataParser : StreamIniDataParser
     {
         /// <summary>
-        ///     Ctor
+        ///     Represents an INI data parser for files.
         /// </summary>
         public FileIniDataParser() {}
 
         /// <summary>
-        ///     Ctor
+        ///     Represents an INI data parser for files.
         /// </summary>
         /// <param name="parser"></param>
         public FileIniDataParser(IniDataParser parser) : base(parser)

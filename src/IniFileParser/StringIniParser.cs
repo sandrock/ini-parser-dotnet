@@ -6,7 +6,6 @@ namespace IniParser
 {
     /// <summary>
     ///     Represents an INI data parser for strings.
-    ///     
     /// </summary>
     /// <remarks>
     ///     This class is deprecated and kept for backwards compatibility.
@@ -22,12 +21,12 @@ namespace IniParser
         public IniDataParser Parser { get; protected set; }
 
         /// <summary>
-        ///     Ctor
+        ///     Represents an INI data parser for strings.
         /// </summary>
         public StringIniParser() : this (new IniDataParser()) {}
 
         /// <summary>
-        ///     Ctor
+        ///     Represents an INI data parser for strings.
         /// </summary>
         /// <param name="parser"></param>
         public StringIniParser(IniDataParser parser)
