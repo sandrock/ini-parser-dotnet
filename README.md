@@ -8,24 +8,39 @@ Also implements merging operations, both for complete ini files, sections, or ev
 
 (*) This library is 100% .NET code and does not have any dependencies on Windows API calls in order to be portable.
 
-Get the latest version: TODO  
 Install it with NuGet: https://www.nuget.org/packages/ini-parser-new/
 
-## Maintainer note
+Maintainer note
+--------------------------
 
-[I will maintain](https://github.com/sandrock/ini-parser-dotnet) this [abandonned library](https://github.com/rickyah/ini-parser).
+[I will maintain](https://github.com/sandrock/ini-parser-dotnet) the current fork of [rickyah's ini-parser library](https://github.com/rickyah/ini-parser).
 
 Feel free to open issues and PR. 
 
 Actions:
 
-- [ ] publish version 2.6 with support for both net4.0 and netstandard2.0
+- [x] publish version 2.6 with support for both net4.0 and netstandard2.0
 - [ ] integrate urgent PRs
 - [ ] review sources, tests, conventions, names; and publish v3.0
 - [ ] open repo to more contributors
 
+Documentation: [is in the upstream repo](https://github.com/rickyah/ini-parser/wiki)
 
-## Version 2.0
+
+Changelog
+--------------------------
+
+### vNext
+
+See [WIP issues](https://github.com/sandrock/ini-parser-dotnet/labels/WIP)
+
+
+### v2.6
+
+Support for `net40` and `netstandard2.0`.
+
+
+### Version 2
 
 Since the INI format isn't really a "standard", version 2 introduces a simpler way to customize INI parsing:
 
@@ -33,18 +48,21 @@ Since the INI format isn't really a "standard", version 2 introduces a simpler w
 - Derive from `IniDataParser` and override the fine-grained parsing methods.
 
 
-## Installation
+Use
+--------------------------
+
+### Installation
 
 The library is published to NuGet and can be installed on the command-line from the directory containing your solution.
 
 
-## Getting Started
+### Getting Started
 
 All code examples expect the following using clauses:
 
 ```csharp
 using IniParser;
-using IniParser.Model;
+using IniParser.Configuration;
 ```
 
 INI data is stored in nested dictionaries, so accessing the value associated to a key in a section is straightforward. Load the data using one of the provided methods.
@@ -72,7 +90,7 @@ parser.WriteFile("Configuration.ini", data);
 Head to the [wiki](https://github.com/rickyah/ini-parser/wiki) for more usage examples, or [check out the code of the example project](https://github.com/rickyah/ini-parser/blob/development/src/IniFileParser.Example/Program.cs)
 
 
-## Merging ini files
+### Merging ini files
 
 Merging ini files is a one-method operation:
 
@@ -94,7 +112,7 @@ Keep in mind that you can merge individual sections if you like:
 config["user_settings"].Merge(user_config["user_settings"]);
 ```
 
-## Comments
+### Comments
 
 The library allows modifying the comments from an ini file. 
 However note than writing the file back to disk, the comments will be rearranged so 
@@ -107,7 +125,7 @@ var listOfCommentsForSection = config.["user_settings"].Comments;
 var listOfCommentsForKey = config["user_settings"].GetKeyData("resolution").Comments;
 ```
 
-## Unity3D
+### Unity3D
 
 You can easily use this library in your Unity3D projects. Just drop either the code or the DLL inside your project's Assets folder and you're ready to go!
 
